@@ -1,0 +1,25 @@
+=== VALIDACION RESTCONF ===
+Script: validacion_restconf.py
+Fecha: 2026-06-21 23:46:59.491673
+Host : labvm
+==========================
+
+HOSTNAME:
+  Esperado  : RTR-FARMCEN
+  Encontrado: RTR-FARMCEN [OK]
+
+LOOPBACK:
+  Esperado  : 10.5.2.1
+  Encontrado: 10.5.2.1 [OK]
+
+INTERFACES:
+  Esperado  : Enlace-WAN-Valparaiso
+  Encontrado: Enlace-WAN-Valparaiso [OK]
+
+NTP:
+  Esperado  : 8.8.8.8
+  Encontrado: 8.8.8.8 [OK]
+
+--------------------------
+RESULTADO GLOBAL:
+ESTADO: CONFORME
