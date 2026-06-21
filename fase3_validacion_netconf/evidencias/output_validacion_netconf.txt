@@ -1,0 +1,31 @@
+=== VALIDACION NETCONF ===
+Script: validacion_netconf.py
+Fecha: 2026-06-21 23:39:23.062275
+Host : labvm
+==========================
+
+Obteniendo configuracion via NETCONF...
+
+HOSTNAME:
+  Esperado  : RTR-FARMCEN
+  Encontrado: RTR-FARMCEN [OK]
+
+LOOPBACK_IP:
+  Esperado  : 10.5.2.1
+  Encontrado: 10.5.2.1 [OK]
+
+LOOPBACK_MASK:
+  Esperado  : 255.255.255.0
+  Encontrado: 255.255.255.0 [OK]
+
+DESCRIPCION_WAN:
+  Esperado  : Enlace-WAN-Valparaiso
+  Encontrado: Enlace-WAN-Valparaiso [OK]
+
+NTP_SERVER:
+  Esperado  : 8.8.8.8
+  Encontrado: 8.8.8.8 [OK]
+
+--------------------------
+RESULTADO GLOBAL:
+ESTADO: CONFORME
