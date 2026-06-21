@@ -1,0 +1,36 @@
+
+PLAY [Aprovisionamiento Automatizado - Farmacia Central SpA] ****************************
+
+TASK [1. Respaldar la configuracion actual] *********************************************
+ok: [csr1kv]
+
+TASK [1.1 Guardar archivo de respaldo] **************************************************
+ok: [csr1kv]
+
+TASK [2. Habilitar servicio NETCONF] ****************************************************
+ok: [csr1kv]
+
+TASK [3. Habilitar servicio RESTCONF] ***************************************************
+ok: [csr1kv]
+
+TASK [4. Habilitar servidor HTTP seguro] ************************************************
+ok: [csr1kv]
+
+TASK [5. Configurar Hostname Corporativo] ***********************************************
+ok: [csr1kv]
+
+TASK [6. Configurar Banner de Acceso] ***************************************************
+ok: [csr1kv]
+
+TASK [7. Configurar Servidor NTP] *******************************************************
+ok: [csr1kv]
+
+TASK [8. Configurar descripcion de la interfaz GigabitEthernet1] ************************
+ok: [csr1kv]
+
+TASK [9. Crear interfaz Loopback con IP de gestion] *************************************
+ok: [csr1kv]
+
+PLAY RECAP ******************************************************************************
+csr1kv                     : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

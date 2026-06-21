@@ -1,0 +1,60 @@
+---
+- name: Aprovisionamiento Automatizado - Farmacia Central SpA
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - ../vars/vars_005D-02.yaml
+
+  tasks:
+    - name: 1. Respaldar la configuracion actual
+      ios_command:
+        commands: show running-config
+      register: current_config
+
+    - name: 1.1 Guardar archivo de respaldo
+      copy:
+        content: "{{ current_config.stdout[0] }}"
+        dest: "./respaldo/backup_{{ alumno.codigo }}.cfg"
+        force: no
+
+    - name: 2. Habilitar servicio NETCONF
+      ios_config:
+        lines:
+          - netconf-yang
+
+    - name: 3. Habilitar servicio RESTCONF
+      ios_config:
+        lines:
+          - restconf
+
+    - name: 4. Habilitar servidor HTTP seguro
+      ios_config:
+        lines:
+          - ip http secure-server
+
+    - name: 5. Configurar Hostname Corporativo
+      ios_system:
+        hostname: "{{ cliente.hostname }}"
+
+    - name: 6. Configurar Banner de Acceso
+      ios_banner:
+        banner: login
+        text: "{{ router.banner }}"
+        state: present
+
+    - name: 7. Configurar Servidor NTP
+      ios_config:
+        lines:
+          - ntp server {{ router.ntp_server }}
+
+    - name: 8. Configurar descripcion de la interfaz GigabitEthernet1
+      ios_config:
+        parents: interface GigabitEthernet1
+        lines:
+          - description {{ router.descripcion_wan }}
+
+    - name: 9. Crear interfaz Loopback con IP de gestion
+      ios_config:
+        parents: interface Loopback{{ router.loopback_id }}
+        lines:
+          - ip address {{ router.loopback_ip }} {{ router.loopback_mask }}
