@@ -1,0 +1,16 @@
+devices:
+  CSR1kv:
+    os: iosxe
+    type: router
+    credentials:
+      default:
+        username: cisco
+        password: cisco123!
+      enable:
+        password: cisco123!
+    connections:
+      cli:
+        protocol: ssh
+        ssh_options: "-o KexAlgorithms=diffie-hellman-group14-sha1"
+        ip: 192.168.56.102
+        port: 22
